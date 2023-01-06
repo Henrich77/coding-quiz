@@ -10,7 +10,12 @@
 // ##### create an object with the questions and answer choices and correct answer.
 
 let startBtn = document.getElementById("button");
-let score = 0;
+let choice1 = document.getElementById("id 1");
+let choice2 = document.getElementById("id 2");
+let choice3 = document.getElementById("id 3");
+let choice4 = document.getElementById("id 4");
+
+
 
 const questions = [{
     question: "The most commomly used data type DO NOT include?",
@@ -49,7 +54,10 @@ const questions = [{
     answer: "JSON",
 }]
 
-let questionsIndex = 0;
+
+let qI = 0;
+let cI= 0; 
+let aI= 0;
 
 
 
@@ -69,11 +77,11 @@ function quiz() {
 
 
 
-for (var i = 0; i<questions[0].choices.length; i++) {
+    for (var i = 0; i<questions[qI].choices.length; i++) {
 
-    var choicesDiv = document.createElement("div");
-    choicesDiv.innerHTML = questions[0].choices[i];
-    divQuestion.appendChild(choicesDiv);
+    // var choicesDiv = document.createElement("div");
+    // choicesDiv.innerHTML = questions[0].choices[i];
+    // divQuestion.appendChild(choicesDiv);
 
 
 }
