@@ -53,11 +53,37 @@ let questionsIndex = 0;
 
 
 
-for (var i = 0; i< questions.length; i++) {
+
+
+
+
+
+function quiz() {
+    console.log(" Hey");
+    var div = document.createElement("div");
+    div.innerHTML =questions[0].question;
+    console.log(questions[0].question);
+    var divQuestion = document.getElementById("question");
+    divQuestion.innerHTML = "";
+    divQuestion.appendChild(div);
+
+
+
+for (var i = 0; i<questions[0].choices.length; i++) {
+
+    var choicesDiv = document.createElement("div");
+    choicesDiv.innerHTML = questions[0].choices[i];
+    divQuestion.appendChild(choicesDiv);
+
+
+}
 
 
 }
 
 function startQuiz(){
-    startBtn.addEventListener("click", quiz());
+    startBtn.addEventListener("click", quiz);
+    console.log("I am working");
 }
+
+startQuiz()
