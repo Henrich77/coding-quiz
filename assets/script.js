@@ -9,6 +9,9 @@
 
 // ##### create an object with the questions and answer choices and correct answer.
 
+let startBtn = document.getElementById("button");
+let score = 0;
+
 const questions = [{
     question: "The most commomly used data type DO NOT include?",
     choices:["Boolean","Integer","String","Variable"],
@@ -29,4 +32,32 @@ const questions = [{
     question: "What is considered to be the most popular programming language in the world?",
     choices: ["Jquery","JavaScript","HTML","Bootstrap"],
     answer: "JavaScript",
+},
+{
+    question: "In JavaScript, what element is used to store and manipulate text usually in multiples?",
+    choices: ["Strings","Variables","Function","Arrays"],
+    answer: "Strings",
+},
+{
+    question: " What is a JavaScript element that represents either TRUE or FALSE values?",
+    choices:["Boolean","String","HTML","Condition"],
+    answer: "Boolean",
+},
+{
+    question: "What is the format called that is used for storing and transporting data?",
+    choices: ["HTML","Day Js", "JSON","Syntax"],
+    answer: "JSON",
 }]
+
+let questionsIndex = 0;
+
+
+
+for (var i = 0; i< questions.length; i++) {
+
+
+}
+
+function startQuiz(){
+    startBtn.addEventListener("click", quiz());
+}
