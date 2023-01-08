@@ -1,5 +1,9 @@
 body{ 
     background-image: url(https://cdn.nerdschalk.com/wp-content/uploads/2020/10/a-peek-from-space.png?width=800);
+    /* background-image: url(https://media.istockphoto.com/id/1191658515/photo/neon-background-abstract-blue-and-pink-with-light-shapes-line-diagonals.jpg?b=1&s=170667a&w=0&k=20&c=dmT59kRCask04UiZuCNp_GQyI5Ph6XtkcRIdE015b8Q=); */
+    /* background-image: url(https://images.unsplash.com/photo-1597332503885-fc8d195a99b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGR5bmFtaWN8ZW58MHx8MHx8&w=1000&q=80); */
+    /* background-image: url(https://cdn.wallpapersafari.com/71/82/GZhrOi.jpg); */
+
     background-size: cover;
     height: 55rem;
     background-position: center;
@@ -13,11 +17,11 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 13rem;
+    margin-top: 8rem;
     background-color: red;
     font-size: 30px;
     border-radius: 2rem;
-    box-shadow: -5rem 0rem 3rem 0rem orange;
+    box-shadow: -5rem 3rem 3rem 3rem orange;
    
 /* margin: 350px; */
 }
@@ -43,8 +47,10 @@ body{
     inset -20px 0 100px white, 
     0 0 10px #fff,            
     -10px 0 40px grey,        
-    10px 0 40px lightgray;  
+    10px 0 40px lightgray;   
      */
+     font-family: 'Rubik Bubbles', cursive;
+
 
 }
 
@@ -69,6 +75,9 @@ button.choices:hover{
     0 0 10px #fff,            
     -10px 0 40px grey,        
     10px 0 40px lightgray; 
+    /* transform: translatey(1rem); */
+    /* transform: scale(5rem); */
+    transition: all 0.5s ease-out;
   
 }
 button.choices{

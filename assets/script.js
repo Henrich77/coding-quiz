@@ -12,11 +12,6 @@
 let startBtn = document.getElementById("button");
 let choice1 = document.getElementById("choices");
 var qIndex = 0
-// let choice2 = document.getElementById("id 2");
-// let choice3 = document.getElementById("id 3");
-// let choice4 = document.getElementById("id 4");
-
-
 
 let questions = [{
     question: "The most commomly used data type DO NOT include?",
@@ -56,12 +51,6 @@ let questions = [{
 }]
 
 
-// let qI = questions.question[i];
-// let cI= 0; 
-// let aI= 0;
-
-// console.log(qI)
-
 
 
 
@@ -70,12 +59,18 @@ let questions = [{
 
 // timer.innerHTML = timerSecond;
 
+var intro = document.getElementById("question");
+var quizTitle = document.createElement("div")
+quizTitle.innerHTML = "Welcome to the coding challenge click the start Quiz button to begin";
+intro.appendChild(quizTitle);
 
 
 
 
 function quiz() {
     console.log(" Hey");
+    startBtn.remove();
+    quizTitle.innerHTML = "";
     var div = document.createElement("div");
     div.innerHTML =questions[qIndex].question;
     console.log(questions[qIndex].question);
