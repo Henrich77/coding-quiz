@@ -10,14 +10,15 @@
 // ##### create an object with the questions and answer choices and correct answer.
 
 let startBtn = document.getElementById("button");
-let choice1 = document.getElementById("id 1");
-let choice2 = document.getElementById("id 2");
-let choice3 = document.getElementById("id 3");
-let choice4 = document.getElementById("id 4");
+let choice1 = document.getElementById("choices");
+var qIndex = 0
+// let choice2 = document.getElementById("id 2");
+// let choice3 = document.getElementById("id 3");
+// let choice4 = document.getElementById("id 4");
 
 
 
-const questions = [{
+let questions = [{
     question: "The most commomly used data type DO NOT include?",
     choices:["Boolean","Integer","String","Variable"],
     answer: "Variable",
@@ -55,12 +56,19 @@ const questions = [{
 }]
 
 
-let qI = 0;
-let cI= 0; 
-let aI= 0;
+// let qI = questions.question[i];
+// let cI= 0; 
+// let aI= 0;
+
+// console.log(qI)
 
 
 
+
+// let timer = document.getElementById("clock");
+// let timerSecond = 80;
+
+// timer.innerHTML = timerSecond;
 
 
 
@@ -69,19 +77,32 @@ let aI= 0;
 function quiz() {
     console.log(" Hey");
     var div = document.createElement("div");
-    div.innerHTML =questions[0].question;
-    console.log(questions[0].question);
+    div.innerHTML =questions[qIndex].question;
+    console.log(questions[qIndex].question);
     var divQuestion = document.getElementById("question");
     divQuestion.innerHTML = "";
     divQuestion.appendChild(div);
 
 
+``
+    for (var i = 0; i<questions[qIndex].choices.length; i++) {
 
-    for (var i = 0; i<questions[qI].choices.length; i++) {
+    var choicesDiv = document.createElement("button");
+    choicesDiv.className = "choices";
+    choicesDiv.innerHTML = questions[qIndex].choices[i];
+    divQuestion.appendChild(choicesDiv);
+    
 
-    // var choicesDiv = document.createElement("div");
-    // choicesDiv.innerHTML = questions[0].choices[i];
-    // divQuestion.appendChild(choicesDiv);
+    let timer = document.getElementById("clock");
+    let timerSecond = 80;
+
+    
+
+
+  
+    
+
+   
 
 
 }
@@ -92,6 +113,11 @@ function quiz() {
 function startQuiz(){
     startBtn.addEventListener("click", quiz);
     console.log("I am working");
+}
+
+function checkAnswer() {
+
+
 }
 
 startQuiz()
