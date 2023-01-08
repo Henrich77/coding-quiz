@@ -35,7 +35,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     color: white;
-    /* box-shadow: */
+    /* box-shadow:
     inset 0 0 10px rgb(189, 18, 18),      
     inset 20px 0 50px rgb(189, 18, 18),   
     inset -20px 0 50px white,  
@@ -44,7 +44,7 @@ body{
     0 0 10px #fff,            
     -10px 0 40px grey,        
     10px 0 40px lightgray;  
-    
+     */
 
 }
 
@@ -61,14 +61,15 @@ button.choices:hover{
     border-radius: 140px;
     font-size: 25px;
     box-shadow:
-    inset 0 0 10px rgb(189, 18, 18) ,      
-    inset 20px 0 50px lightgray,   
+    inset 0 0 10px rgb(189, 18, 18),      
+    inset 20px 0 50px grey,   
     inset -20px 0 50px white,  
-    inset 20px 0 300px rgb(189, 18, 18),  
+    inset 20px 0 300px grey,  
     inset -20px 0 100px white, 
     0 0 10px #fff,            
     -10px 0 40px grey,        
     10px 0 40px lightgray; 
+  
 }
 button.choices{
     background-color: black;
