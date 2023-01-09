@@ -11,7 +11,11 @@
 
 let startBtn = document.getElementById("button");
 let choice1 = document.getElementById("choices");
-var qIndex = 0
+var choicesDiv = document.createElement("button");
+var index = 0;
+var time = 60;
+var timeInterval;
+
 
 let questions = [{
     question: "The most commomly used data type DO NOT include?",
@@ -64,6 +68,9 @@ var quizTitle = document.createElement("div")
 quizTitle.innerHTML = "Welcome to the coding challenge click the start Quiz button to begin";
 intro.appendChild(quizTitle);
 
+var choicesDiv = document.createElement("button");
+choicesDiv.className = "choices";
+
 
 
 
@@ -72,24 +79,25 @@ function quiz() {
     startBtn.remove();
     quizTitle.innerHTML = "";
     var div = document.createElement("div");
-    div.innerHTML =questions[qIndex].question;
-    console.log(questions[qIndex].question);
+    div.innerHTML =questions[index].question;
+    console.log(questions[index].question);
     var divQuestion = document.getElementById("question");
     divQuestion.innerHTML = "";
     divQuestion.appendChild(div);
 
 
-``
-    for (var i = 0; i<questions[qIndex].choices.length; i++) {
+
+    for (var i = 0; i<questions[index].choices.length; i++) {
 
     var choicesDiv = document.createElement("button");
     choicesDiv.className = "choices";
-    choicesDiv.innerHTML = questions[qIndex].choices[i];
+    choicesDiv.innerHTML = questions[index].choices[i];
     divQuestion.appendChild(choicesDiv);
+    choicesDiv.addEventListener("click",checkAnswer);
+    
     
 
-    let timer = document.getElementById("clock");
-    let timerSecond = 80;
+   
 
     
 
@@ -106,13 +114,65 @@ function quiz() {
 }
 
 function startQuiz(){
-    startBtn.addEventListener("click", quiz);
+    startBtn.addEventListener("click", function(){
+        quiz();
+        timer();
+    });
     console.log("I am working");
 }
 
 function checkAnswer() {
+    console.log("hey the choices are being clicked");
+    
+    var button = this.textContent
+
+    var correct = document.getElementById("correct");
+    
+
+    if( button === questions[index].answer){
+
+        console.log("your answer is correct")
+        correct.textContent = "correct"
+    } else {
+        
+        time -= 5
+        // time = time - 5
+
+        console.log(" your answer is incorrect")
+        correct.textContent = "incorrect"
+    } 
+
+    if (index < questions.length-1){
+    index++;
+
+    quiz()
+
+    }
+
+    
 
 
 }
 
+function timer () {
+
+    var clock = document.getElementById("clock");
+    clock.textContent = time;
+
+    timeInterval = setInterval(() => {
+        time--
+        clock.textContent = time;
+
+        if (time <= 0){
+            clearInterval(timeInterval);
+        }
+    }, 1000);
+
+
+    
+}
+
 startQuiz()
+var div = document.createElement("div");
+div.innerHTML =questions[index].question;
+console.log(questions[index].length)
