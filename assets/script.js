@@ -9,8 +9,7 @@
 
 // ##### create an object with the questions and answer choices and correct answer.
 
-let startBtn = document.getElementById("button");
-let choice1 = document.getElementById("choices");
+let startBtn = document.getElementById("button"); //this variable targets the start Quiz button.
 var choicesDiv = document.createElement("button");
 var index = 0;
 var time = 60;
@@ -19,7 +18,7 @@ var timeInterval;
 
 let questions = [{
     question: "The most commomly used data type DO NOT include?",
-    choices:["Boolean","Integer","String","Variable"],
+    choices:["A. Boolean","B. Integer","C. String","D. Variable"],
     answer: "Variable",
 },
 
@@ -132,14 +131,16 @@ function checkAnswer() {
     if( button === questions[index].answer){
 
         console.log("your answer is correct")
-        correct.textContent = "correct"
+        correct.textContent = "✅ Correct"
     } else {
         
         time -= 5
-        // time = time - 5
+        /*time = time - 5
+        this is another way to subtract the time */
 
         console.log(" your answer is incorrect")
-        correct.textContent = "incorrect"
+        correct.className = "incorrect";
+        correct.textContent = "❌ Incorrect"
     } 
 
     if (index < questions.length-1){
@@ -173,6 +174,3 @@ function timer () {
 }
 
 startQuiz()
-var div = document.createElement("div");
-div.innerHTML =questions[index].question;
-console.log(questions[index].length)
