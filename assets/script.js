@@ -7,18 +7,18 @@
 5. highscores must be daved to the local storage 
 */
 
-// ##### create an object with the questions and answer choices and correct answer.
+// ######## create an object with the questions and answer choices and correct answer.
 
 let startBtn = document.getElementById("button"); //this variable targets the start Quiz button.
 var choicesDiv = document.createElement("button");
-var index = 0;
-var time = 60;
-var timeInterval;
+var index = 0; // ####### this is the Questions index
+var time = 60; // ######## this is the amount of time on the timer
+var timeInterval;  // ######## this is used in the timer function
 
-
+// ########### this is my array of questions, choices, and answers.
 let questions = [{
     question: "The most commomly used data type DO NOT include?",
-    choices:["A. Boolean","B. Integer","C. String","D. Variable"],
+    choices:["Boolean","Integer","String","Variable"],
     answer: "Variable",
 },
 
@@ -29,7 +29,7 @@ let questions = [{
 },
 {
     question:"What is the element called that can continue to execute a block of code as long as the specified condition remains TRUE?",
-    choices: ["clone", "variable","Loop","Boolean"],
+    choices: ["Clone", "Variable","Loop","Boolean"],
     answer: "Loop",
 },
 {
@@ -57,42 +57,38 @@ let questions = [{
 
 
 
-// let timer = document.getElementById("clock");
-// let timerSecond = 80;
-
-// timer.innerHTML = timerSecond;
-
+// ######## this is the beginning message when the page loads
 var intro = document.getElementById("question");
 var quizTitle = document.createElement("div")
 quizTitle.innerHTML = "Welcome to the coding challenge click the start Quiz button to begin";
 intro.appendChild(quizTitle);
 
-var choicesDiv = document.createElement("button");
-choicesDiv.className = "choices";
+// var choicesDiv = document.createElement("button");
+// choicesDiv.className = "choices";
 
 
 
-
+// this is the main function of the quiz
 function quiz() {
     console.log(" Hey");
-    startBtn.remove();
-    quizTitle.innerHTML = "";
-    var div = document.createElement("div");
-    div.innerHTML =questions[index].question;
+    startBtn.remove(); // ######## this removes the start quiz button when the page loads
+    quizTitle.innerHTML = ""; // ####### this removes the welcome message once the start quiz button is clicked
+    var div = document.createElement("div"); // ####### this dynamically creates the div that will display my questions
+    div.innerHTML =questions[index].question; // ######## adding the questions to the div
     console.log(questions[index].question);
     var divQuestion = document.getElementById("question");
     divQuestion.innerHTML = "";
-    divQuestion.appendChild(div);
+    divQuestion.appendChild(div); // ####### this adds the question to the page
 
 
+// ######### this is the for loop for the choices
+    for (var i = 0; i<questions[index].choices.length; i++) { 
 
-    for (var i = 0; i<questions[index].choices.length; i++) {
-
-    var choicesDiv = document.createElement("button");
-    choicesDiv.className = "choices";
-    choicesDiv.innerHTML = questions[index].choices[i];
-    divQuestion.appendChild(choicesDiv);
-    choicesDiv.addEventListener("click",checkAnswer);
+    var choicesDiv = document.createElement("button"); // ##### this creates a button for the choices
+    choicesDiv.className = "choices"; //##### this adds a class name to the buttons to style them
+    choicesDiv.innerHTML = questions[index].choices[i]; // ####### this puts the choices in the div
+    divQuestion.appendChild(choicesDiv); //######### this adds the page
+    choicesDiv.addEventListener("click",checkAnswer); // #### this adds a click event listener to the choices buttons
     
     
 
@@ -111,7 +107,7 @@ function quiz() {
 
 
 }
-
+// ######### this function starts the quiz once the button is clicked and displays the timer as well
 function startQuiz(){
     startBtn.addEventListener("click", function(){
         quiz();
@@ -119,19 +115,24 @@ function startQuiz(){
     });
     console.log("I am working");
 }
-
+// ########## this function informs the user wether the question is right or wrong and also loads the next question on the page
 function checkAnswer() {
     console.log("hey the choices are being clicked");
     
     var button = this.textContent
 
     var correct = document.getElementById("correct");
+    var wrongAnwer = document.getElementById("wrong");
+    
+   
+    
     
 
     if( button === questions[index].answer){
 
         console.log("your answer is correct")
         correct.textContent = "✅ Correct"
+
     } else {
         
         time -= 5
@@ -139,7 +140,6 @@ function checkAnswer() {
         this is another way to subtract the time */
 
         console.log(" your answer is incorrect")
-        correct.className = "incorrect";
         correct.textContent = "❌ Incorrect"
     } 
 
@@ -154,7 +154,7 @@ function checkAnswer() {
 
 
 }
-
+// ######### this is the timer function
 function timer () {
 
     var clock = document.getElementById("clock");

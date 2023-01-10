@@ -91,6 +91,7 @@ button.choices{
     margin-right: auto;
     width: 250px;
     margin-top: 5px;
+    font-family: 'Dosis', sans-serif;
 }
 
 #correct{
@@ -98,8 +99,4 @@ button.choices{
     font-size: 30px;
     font-family: 'Rubik 80s Fade', cursive;
     color: green;
-}
-
-div.incorrect {
-    color: red;
 }
