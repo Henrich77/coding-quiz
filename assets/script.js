@@ -12,7 +12,7 @@
 let startBtn = document.getElementById("button"); //this variable targets the start Quiz button.
 var choicesDiv = document.createElement("button");
 var index = 0; // ####### this is the Questions index
-var time = 60; // ######## this is the amount of time on the timer
+var time = 60;; // ######## this is the amount of time on the timer
 var timeInterval;  // ######## this is used in the timer function
 
 // ########### this is my array of questions, choices, and answers.
@@ -113,7 +113,7 @@ function startQuiz(){
         quiz();
         timer();
     });
-    console.log("I am working");
+    console.log("The quiz is working ");
 }
 // ########## this function informs the user wether the question is right or wrong and also loads the next question on the page
 function checkAnswer() {
@@ -148,7 +148,11 @@ function checkAnswer() {
 
     quiz()
 
+    } else {
+        clearInterval(timeInterval)
     }
+    
+    
 
     
 
@@ -164,8 +168,11 @@ function timer () {
         time--
         clock.textContent = time;
 
+        // if (questions[i])
+
         if (time <= 0){
             clearInterval(timeInterval);
+            GameOver();
         }
     }, 1000);
 
@@ -173,4 +180,19 @@ function timer () {
     
 }
 
+function GameOver (){
+
+    var message = document.createElement("p")
+    message.textContent = " Game Over"
+    var MessageText = document.getElementById("clock");
+    MessageText = "";
+    MessageText.append(message);
+}
+
+function setHighscore() {
+
+
+}
+
 startQuiz()
+
