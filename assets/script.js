@@ -205,11 +205,12 @@ function setHighscore() {
     divQuestion.appendChild(input)
     divQuestion.appendChild(subBtn)
 
-    subBtn.onclick = function() {
+    subBtn.onclick = function () {
 
         let inputValue = input.value;
         var score = clock.innerHTML;
-        
+        // finalScore.innerHTML = localStorage.getItem(inputValue)
+
         console.log(inputValue);
         console.log(score)
 
@@ -217,18 +218,18 @@ function setHighscore() {
             localStorage.setItem(inputValue, score)
             console.log(localStorage)
 
+            for (let i = 0; i < localStorage.length; i++) {
+                finalScore.innerHTML = localStorage[i].getItem(inputValue,score)
+                console.log(localStorage[i])
+    
+    
+            }
 
-
-        }
-
-        for ( let i = 0; i < localStorage.length; i++) {
-
-         const key = localStorage[i];
-         const savedScore = localStorage.getItem(key)
-         finalScore.textContent = ` ${key}; ${savedScore}`
 
 
         }
+
+        
 
 
 
