@@ -207,8 +207,17 @@ function setHighscore() {
 
     subBtn.onclick = function() {
 
-        let iV = input.value;
-        console.log(iV);
+        let inputValue = input.value;
+        var score = clock.value;
+        console.log(inputValue);
+        console.log(time)
+
+        // if (iV) {
+        //     localStorage.setItem('score', iV)
+        //     location.reload()
+        // }
+
+
 
     }
 
