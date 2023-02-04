@@ -189,7 +189,7 @@ function setHighscore() {
     divQuestion.innerHTML = ""
     correct.innerHTML = ""
 
-    let message = document.getElementById('score')
+    let finalScore = document.getElementById('highscore')
     let submit = document.getElementById('send')
 
     let highscore = document.createElement('div');
@@ -208,14 +208,27 @@ function setHighscore() {
     subBtn.onclick = function() {
 
         let inputValue = input.value;
-        var score = clock.value;
+        var score = clock.innerHTML;
+        
         console.log(inputValue);
-        console.log(time)
+        console.log(score)
 
-        // if (iV) {
-        //     localStorage.setItem('score', iV)
-        //     location.reload()
-        // }
+        if (inputValue) {
+            localStorage.setItem(inputValue, score)
+            console.log(localStorage)
+
+
+
+        }
+
+        for ( let i = 0; i < localStorage.length; i++) {
+
+         const key = localStorage[i];
+         const savedScore = localStorage.getItem(key)
+         finalScore.textContent = ` ${key}; ${savedScore}`
+
+
+        }
 
 
 
